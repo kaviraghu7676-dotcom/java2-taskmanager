@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulse | Work in motion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .task{animation:task-in .42s both;animation-delay:var(--delay,0ms)}@keyframes task-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}.check{transition:background .18s,border-color .18s,transform .18s}.check:hover{transform:scale(1.12)}.primary-button:disabled{opacity:.7;cursor:wait}.button-spinner{display:inline-block;width:13px;height:13px;border:2px solid #ffffff66;border-top-color:var(--mint);border-radius:50%;animation:spin .7s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.toast{position:fixed;right:24px;bottom:24px;z-index:10;display:flex;align-items:center;gap:10px;padding:13px 16px;background:var(--dark-green);color:#fff;border-left:4px solid var(--mint);box-shadow:0 12px 30px #17231f2b;font-size:12px;opacity:0;transform:translateY(12px);transition:opacity .22s,transform .22s}.toast.visible{opacity:1;transform:none}.toast span{display:grid;place-items:center;width:19px;height:19px;border-radius:50%;background:var(--mint);color:var(--dark-green);font-weight:700}.toast-error{border-left-color:#ef8d76}.toast-error span{background:#ef8d76}.status.offline .status-dot{background:#ef8d76;box-shadow:0 0 0 4px #704e47}@media(max-width:480px){.toast{right:16px;bottom:16px;left:16px}}
+        .pulse-section{margin-top:48px}.text-button{border:0;background:transparent;color:var(--green);font-size:12px;font-weight:700;cursor:pointer}.text-button span{font-size:17px;margin-left:6px}.project-grid{display:grid;grid-template-columns:1fr 1fr 1.15fr;gap:14px}.project-card,.activity-card{background:var(--white);border:1px solid var(--line);padding:20px}.project-head{display:flex;align-items:center;justify-content:space-between}.project-icon{width:31px;height:31px;border-radius:8px;display:grid;place-items:center;color:#fff;font:700 14px 'Space Grotesk'}.coral{background:#ef8d76}.blue{background:#6b9fd3}.project-status{font-size:10px;color:#4c8a5c;background:#e9f3e7;padding:5px 8px;border-radius:4px}.project-card h3{font:700 17px 'Space Grotesk';margin:24px 0 5px}.project-card>p{font-size:11px;color:var(--muted);margin:0}.progress-row{display:flex;justify-content:space-between;font-size:10px;color:var(--muted);margin:29px 0 8px}.progress-row strong{color:var(--ink)}.progress{height:5px;background:#e8eee8}.progress i{display:block;height:100%;background:var(--green)}.project-footer{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:10px;margin-top:20px}.stack{display:flex}.stack b{display:grid;place-items:center;background:#f1c5b5;border:2px solid #fff;color:var(--ink);width:23px;height:23px;border-radius:50%;font-size:8px;margin-left:-5px}.stack b:nth-child(2){background:#bfd9eb}.stack b:nth-child(3){background:#d7e79c}.activity-card .eyebrow{margin:0}.activity-dot{width:7px;height:7px;background:var(--mint);border-radius:50%}.activity{display:flex;gap:10px;margin-top:18px}.activity-avatar{width:27px;height:27px;display:grid;place-items:center;border-radius:50%;font-size:8px;font-weight:700;flex:none}.mint{background:#d7e79c}.orange{background:#f5c18d}.lavender{background:#c9c5e2}.activity p{font-size:11px;line-height:1.4;margin:0;color:var(--muted)}.activity p strong,.activity p b{color:var(--ink)}.activity small{display:block;color:#a0aaa3;font-size:9px;margin-top:3px}@media(max-width:800px){.project-grid{grid-template-columns:1fr 1fr}.activity-card{grid-column:span 2}}@media(max-width:480px){.project-grid{grid-template-columns:1fr}.activity-card{grid-column:auto}}
+    </style>
+</head>
+<body>
+<div class="shell">
+    <aside class="sidebar">
+        <a class="brand" href="./"><span class="brand-mark">+</span><span>pulse</span></a>
+        <p class="eyebrow">Workspace</p>
+        <nav>
+            <button class="nav-item active" data-filter="all"><span>◈</span> Overview <b id="all-count">3</b></button>
+            <button class="nav-item" data-filter="active"><span>◷</span> In progress <b id="active-count">2</b></button>
+            <button class="nav-item" data-filter="completed"><span>✓</span> Completed <b id="completed-count">1</b></button>
+        </nav>
+        <div class="sidebar-bottom">
+            <div class="status"><span class="status-dot"></span><div><strong>All systems normal</strong><small id="health-label">API is operational</small></div></div>
+            <div class="profile"><div class="avatar">AR</div><div><strong>Alex Rivera</strong><small>Product lead</small></div><span class="dots">•••</span></div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar"><div class="breadcrumbs">Monday, 19 August 2026 <span>/</span> <strong>Overview</strong></div><button class="icon-button" aria-label="Notifications">♢<i></i></button></header>
+        <section class="welcome"><div><p class="eyebrow">Your command center</p><h1>Good morning, Alex<span>.</span></h1><p class="subheading">A clear view of what is moving today.</p></div><button class="primary-button" id="open-form"><span>+</span> Add task</button></section>
+
+        <section class="metrics" aria-label="Task summary">
+            <div class="metric-card highlight"><div class="metric-icon">↗</div><p>Momentum</p><strong id="momentum">67%</strong><small><span>+12%</span> from last week</small></div>
+            <div class="metric-card"><div class="metric-icon">◷</div><p>Open tasks</p><strong id="open-count">2</strong><small>Across 3 projects</small></div>
+            <div class="metric-card"><div class="metric-icon">✓</div><p>Completed</p><strong id="done-count">1</strong><small>This week</small></div>
+            <div class="metric-card"><div class="metric-icon">⌁</div><p>Focus time</p><strong>4.5<span>h</span></strong><small><span>+45m</span> from yesterday</small></div>
+        </section>
+
+        <div class="content-grid">
+            <section class="tasks-panel">
+                <div class="section-heading"><div><p class="eyebrow">Stay in flow</p><h2>Today's focus</h2></div><div class="filter-pills"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="active">Open</button><button class="filter" data-filter="completed">Done</button></div></div>
+                <div id="task-list" class="task-list"><div class="loading">Loading your tasks...</div></div>
+            </section>
+            <aside class="insight-panel"><div class="insight-top"><span class="spark">✦</span><p class="eyebrow">A small insight</p></div><h2>Protect your best hour.</h2><p>Your focus is strongest between 9:00 and 11:00. Try keeping that window meeting-free for deep work.</p><div class="mini-chart"><span style="height:35%"></span><span style="height:48%"></span><span style="height:42%"></span><span style="height:72%"></span><span style="height:58%"></span><span style="height:90%"></span><span style="height:66%"></span></div><small>Focus trend · last 7 days</small></aside>
+        </div>
+        <section class="pulse-section">
+            <div class="section-heading"><div><p class="eyebrow">A wider view</p><h2>Project pulse</h2></div><button class="text-button">View all projects <span>→</span></button></div>
+            <div class="project-grid">
+                <article class="project-card"><div class="project-head"><span class="project-icon coral">N</span><span class="project-status">On track</span></div><h3>New user onboarding</h3><p>Product experience</p><div class="progress-row"><span>72% complete</span><strong>18 / 25</strong></div><div class="progress"><i style="width:72%"></i></div><div class="project-footer"><span>Due in 8 days</span><div class="stack"><b>JD</b><b>MK</b><b>+2</b></div></div></article>
+                <article class="project-card"><div class="project-head"><span class="project-icon blue">Q</span><span class="project-status">On track</span></div><h3>Q3 launch campaign</h3><p>Growth &amp; marketing</p><div class="progress-row"><span>48% complete</span><strong>12 / 25</strong></div><div class="progress"><i style="width:48%"></i></div><div class="project-footer"><span>Due in 16 days</span><div class="stack"><b>AR</b><b>SL</b><b>+4</b></div></div></article>
+                <article class="activity-card"><div class="project-head"><p class="eyebrow">Recent activity</p><span class="activity-dot"></span></div><div class="activity"><span class="activity-avatar mint">SL</span><p><strong>Sam Lee</strong> completed <b>Audit landing page copy</b><small>12 minutes ago</small></p></div><div class="activity"><span class="activity-avatar orange">JD</span><p><strong>Jamie Diaz</strong> added a comment to <b>Q3 launch campaign</b><small>48 minutes ago</small></p></div><div class="activity"><span class="activity-avatar lavender">MK</span><p><strong>Morgan Kim</strong> moved <b>New user onboarding</b> to review<small>2 hours ago</small></p></div></article>
+            </div>
+        </section>
+    </main>
+</div>
+<dialog id="task-dialog"><form method="dialog" id="task-form"><button class="close" value="cancel" aria-label="Close">×</button><p class="eyebrow">New focus item</p><h2>What needs your attention?</h2><label>Task title<input name="title" required maxlength="120" placeholder="e.g. Outline the launch plan"></label><label>Category<select name="category"><option>Planning</option><option>Product</option><option>Communication</option><option>General</option></select></label><button class="primary-button" type="submit">Create task <span>→</span></button></form></dialog>
+<script src="app.js"></script>
+</body>
+</html>
