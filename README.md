@@ -26,4 +26,4 @@ The deployable artifact is created at `target/pulse-dashboard.war`. Copy it to t
 - `PUT /api/tasks?id=1&completed=true` updates completion state.
 
 Task data resets whenever the application restarts. Replace the list in `TaskServlet` with a repository or database integration for precence .
-
+Jenkins automatic trigger test
