@@ -25,4 +25,4 @@ The deployable artifact is created at `target/pulse-dashboard.war`. Copy it to t
 - `POST /api/tasks` accepts form fields `title` and `category`.
 - `PUT /api/tasks?id=1&completed=true` updates completion state.
 
-Task data resets whenever the application restarts. Replace the list in `TaskServlet` with a repository or database integration for precence .
+Task data resets whenever the application restarts. Replace the list in `TaskServlet` with a repository or database integration for  .
