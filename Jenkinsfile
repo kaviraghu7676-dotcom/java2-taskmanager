@@ -2,7 +2,6 @@ pipeline {
     agent any
 
     stages {
-
         stage('Checkout') {
             steps {
                 git branch: 'main',
@@ -49,6 +48,14 @@ pipeline {
         stage('Verify Build') {
             steps {
                 sh 'ls -lh target/'
+            }
+        }
+
+        stage('Deploy to Tomcat') {
+            steps {
+                sh '''
+                    cp target/pulse-dashboard.war /opt/apache-tomcat-10.1.61/webapps/
+                '''
             }
         }
     }
